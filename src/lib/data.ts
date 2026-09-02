@@ -62,6 +62,8 @@ export const skillCategories: SkillCategory[] = [
 export type ExperienceEntry = {
   role: string;
   company: string;
+  companyBadge: string;
+  companyColor: string;
   period: string;
   description: string;
   tags: string[];
@@ -69,17 +71,51 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
-    role: "Analista Desenvolvedor PL",
-    company: "Capgemini · alocado na SEFAZ",
-    period: "2024 — Presente",
+    role: "Analista Desenvolvedor Pleno",
+    company: "Capgemini · VWFS (Volkswagen)",
+    companyBadge: "CG",
+    companyColor: "#3fd0ff",
+    period: "2026 — Presente",
     description:
-      "Construção de um novo sistema para substituir a solução legada do Plano Plurianual (PPA), cobrindo desenvolvimento, testes, arquitetura e modelagem de banco de dados. Responsável por garantir conformidade com diretrizes de auditoria e por integrações com a PRODESP.",
+      "Atuação na modernização e reescrita dos sistemas previamente auditados no cliente VWFS, aplicando as recomendações levantadas na fase de auditoria.",
+    tags: ["Modernização", "Refatoração", "VWFS"],
+  },
+  {
+    role: "Analista Desenvolvedor Pleno",
+    company: "Capgemini · VWFS (Volkswagen)",
+    companyBadge: "CG",
+    companyColor: "#3fd0ff",
+    period: "Agosto 2025 — Dezembro 2025",
+    description:
+      "Levantamento e análise de requisitos e auditoria de sistemas no cliente VWFS, mapeando pontos de melhoria e conformidade para a fase seguinte de modernização.",
+    tags: ["Análise de Requisitos", "Auditoria", "VWFS"],
+  },
+  {
+    role: "Analista Desenvolvedor Pleno",
+    company: "Capgemini · SEFAZ",
+    companyBadge: "CG",
+    companyColor: "#3fd0ff",
+    period: "2024 — Julho 2025",
+    description:
+      "Construção de um novo sistema para substituir a solução legada do Plano Plurianual (PPA v2), cobrindo desenvolvimento, testes, arquitetura e modelagem de banco de dados, com conformidade a diretrizes de auditoria e integrações com a PRODESP.",
     tags: [".NET Core", "Clean Architecture", "Auditoria"],
   },
   {
-    role: "Analista / Desenvolvedor JR",
+    role: "Analista · Cyber Security",
     company: "Indra Company",
-    period: "2021",
+    companyBadge: "IN",
+    companyColor: "#8b7bf7",
+    period: "2022 — 2024",
+    description:
+      "Transição para a equipe de cyber security, atuando no reforço de segurança das aplicações e processos da empresa.",
+    tags: ["Cyber Security"],
+  },
+  {
+    role: "Analista / Desenvolvedor Jr",
+    company: "Indra Company",
+    companyBadge: "IN",
+    companyColor: "#8b7bf7",
+    period: "2021 — 2022",
     description:
       "Desenvolvimento voltado à automação de processos manuais e à transformação de aplicações legadas em sistemas mais modernos e eficientes, incluindo integrações com crawlers financeiros e criação de novas aplicações (Ajuizamento, Watch List, ROC).",
     tags: ["Automação", "Integrações", "Legado"],
@@ -87,10 +123,41 @@ export const experience: ExperienceEntry[] = [
   {
     role: "Auxiliar de Desenvolvimento",
     company: "C6 Bank",
+    companyBadge: "C6",
+    companyColor: "#2dd4bf",
     period: "2018",
     description:
       "Atuação na equipe de front-end do banco: colaboração no desenvolvimento da landing page, criação do código dos primeiros e-mails marketing e colaboração na biblioteca de componentes geral do banco.",
     tags: ["Front-end", "Email Marketing", "Componentes"],
+  },
+  {
+    role: "Assistente de TI",
+    company: "CALIA Y2 Propaganda & Marketing",
+    companyBadge: "CY",
+    companyColor: "#fbbf24",
+    period: "2021 — 2022",
+    description:
+      "Suporte a auxiliares, manutenção de microcomputadores e impressoras e gerenciamento da rede interna, incluindo a conexão com a filial de Brasília.",
+    tags: ["Suporte", "Redes"],
+  },
+  {
+    role: "Auxiliar de TI",
+    company: "CALIA Y2 Propaganda & Marketing",
+    companyBadge: "CY",
+    companyColor: "#fbbf24",
+    period: "2021 — 2022",
+    description:
+      "Suporte ao usuário, manutenção de microcomputadores e impressoras e gerenciamento da rede interna e conexão com a filial de Brasília.",
+    tags: ["Suporte", "Manutenção"],
+  },
+  {
+    role: "Estágio em TI",
+    company: "CALIA Y2 Propaganda & Marketing",
+    companyBadge: "CY",
+    companyColor: "#fbbf24",
+    period: "2020 — 2021",
+    description: "Atuação na equipe de suporte ao usuário e redes da empresa.",
+    tags: ["Suporte", "Estágio"],
   },
 ];
 
