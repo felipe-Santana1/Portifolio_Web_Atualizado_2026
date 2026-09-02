@@ -59,105 +59,115 @@ export const skillCategories: SkillCategory[] = [
   },
 ];
 
-export type ExperienceEntry = {
+export type RoleStep = {
   role: string;
-  company: string;
-  companyBadge: string;
-  companyColor: string;
   period: string;
   description: string;
   tags: string[];
 };
 
-export const experience: ExperienceEntry[] = [
+export type CompanyTimeline = {
+  company: string;
+  companyBadge: string;
+  companyColor: string;
+  overallPeriod: string;
+  roles: RoleStep[];
+};
+
+export const experience: CompanyTimeline[] = [
   {
-    role: "Analista Desenvolvedor Pleno",
-    company: "Capgemini · VWFS (Volkswagen)",
+    company: "Capgemini",
     companyBadge: "CG",
     companyColor: "#3fd0ff",
-    period: "2026 — Presente",
-    description:
-      "Atuação na modernização e reescrita dos sistemas previamente auditados no cliente VWFS, aplicando as recomendações levantadas na fase de auditoria.",
-    tags: ["Modernização", "Refatoração", "VWFS"],
+    overallPeriod: "2024 — Presente",
+    roles: [
+      {
+        role: "Analista Desenvolvedor Pleno · SEFAZ",
+        period: "2024 — Julho 2025",
+        description:
+          "Construção de um novo sistema para substituir a solução legada do Plano Plurianual (PPA v2), cobrindo desenvolvimento, testes, arquitetura e modelagem de banco de dados, com conformidade a diretrizes de auditoria e integrações com a PRODESP.",
+        tags: [".NET Core", "Clean Architecture", "Auditoria"],
+      },
+      {
+        role: "Análise de Requisitos & Auditoria · VWFS",
+        period: "Agosto 2025 — Dezembro 2025",
+        description:
+          "Levantamento e análise de requisitos e auditoria de sistemas no cliente VWFS (Volkswagen), mapeando pontos de melhoria e conformidade para a fase seguinte de modernização.",
+        tags: ["Análise de Requisitos", "Auditoria", "VWFS"],
+      },
+      {
+        role: "Modernização de Sistemas Auditados · VWFS",
+        period: "2026 — Presente",
+        description:
+          "Atuação na modernização e reescrita dos sistemas previamente auditados no cliente VWFS, aplicando as recomendações levantadas na fase de auditoria.",
+        tags: ["Modernização", "Refatoração", "VWFS"],
+      },
+    ],
   },
   {
-    role: "Analista Desenvolvedor Pleno",
-    company: "Capgemini · VWFS (Volkswagen)",
-    companyBadge: "CG",
-    companyColor: "#3fd0ff",
-    period: "Agosto 2025 — Dezembro 2025",
-    description:
-      "Levantamento e análise de requisitos e auditoria de sistemas no cliente VWFS, mapeando pontos de melhoria e conformidade para a fase seguinte de modernização.",
-    tags: ["Análise de Requisitos", "Auditoria", "VWFS"],
-  },
-  {
-    role: "Analista Desenvolvedor Pleno",
-    company: "Capgemini · SEFAZ",
-    companyBadge: "CG",
-    companyColor: "#3fd0ff",
-    period: "2024 — Julho 2025",
-    description:
-      "Construção de um novo sistema para substituir a solução legada do Plano Plurianual (PPA v2), cobrindo desenvolvimento, testes, arquitetura e modelagem de banco de dados, com conformidade a diretrizes de auditoria e integrações com a PRODESP.",
-    tags: [".NET Core", "Clean Architecture", "Auditoria"],
-  },
-  {
-    role: "Analista · Cyber Security",
     company: "Indra Company",
     companyBadge: "IN",
     companyColor: "#8b7bf7",
-    period: "2022 — 2024",
-    description:
-      "Transição para a equipe de cyber security, atuando no reforço de segurança das aplicações e processos da empresa.",
-    tags: ["Cyber Security"],
+    overallPeriod: "2021 — 2024",
+    roles: [
+      {
+        role: "Analista / Desenvolvedor Jr · Automação",
+        period: "2021 — 2022",
+        description:
+          "Desenvolvimento voltado à automação de processos manuais e à transformação de aplicações legadas em sistemas mais modernos e eficientes, incluindo integrações com crawlers financeiros e criação de novas aplicações (Ajuizamento, Watch List, ROC).",
+        tags: ["Automação", "Integrações", "Legado"],
+      },
+      {
+        role: "Analista · Cyber Security",
+        period: "2022 — 2024",
+        description:
+          "Transição para a equipe de cyber security, atuando no reforço de segurança das aplicações e processos da empresa.",
+        tags: ["Cyber Security"],
+      },
+    ],
   },
   {
-    role: "Analista / Desenvolvedor Jr",
-    company: "Indra Company",
-    companyBadge: "IN",
-    companyColor: "#8b7bf7",
-    period: "2021 — 2022",
-    description:
-      "Desenvolvimento voltado à automação de processos manuais e à transformação de aplicações legadas em sistemas mais modernos e eficientes, incluindo integrações com crawlers financeiros e criação de novas aplicações (Ajuizamento, Watch List, ROC).",
-    tags: ["Automação", "Integrações", "Legado"],
-  },
-  {
-    role: "Auxiliar de Desenvolvimento",
     company: "C6 Bank",
     companyBadge: "C6",
     companyColor: "#2dd4bf",
-    period: "2018",
-    description:
-      "Atuação na equipe de front-end do banco: colaboração no desenvolvimento da landing page, criação do código dos primeiros e-mails marketing e colaboração na biblioteca de componentes geral do banco.",
-    tags: ["Front-end", "Email Marketing", "Componentes"],
+    overallPeriod: "2018",
+    roles: [
+      {
+        role: "Auxiliar de Desenvolvimento",
+        period: "2018",
+        description:
+          "Atuação na equipe de front-end do banco: colaboração no desenvolvimento da landing page, criação do código dos primeiros e-mails marketing e colaboração na biblioteca de componentes geral do banco.",
+        tags: ["Front-end", "Email Marketing", "Componentes"],
+      },
+    ],
   },
   {
-    role: "Assistente de TI",
     company: "CALIA Y2 Propaganda & Marketing",
     companyBadge: "CY",
     companyColor: "#fbbf24",
-    period: "2021 — 2022",
-    description:
-      "Suporte a auxiliares, manutenção de microcomputadores e impressoras e gerenciamento da rede interna, incluindo a conexão com a filial de Brasília.",
-    tags: ["Suporte", "Redes"],
-  },
-  {
-    role: "Auxiliar de TI",
-    company: "CALIA Y2 Propaganda & Marketing",
-    companyBadge: "CY",
-    companyColor: "#fbbf24",
-    period: "2021 — 2022",
-    description:
-      "Suporte ao usuário, manutenção de microcomputadores e impressoras e gerenciamento da rede interna e conexão com a filial de Brasília.",
-    tags: ["Suporte", "Manutenção"],
-  },
-  {
-    role: "Estágio em TI",
-    company: "CALIA Y2 Propaganda & Marketing",
-    companyBadge: "CY",
-    companyColor: "#fbbf24",
-    period: "2020 — 2021",
-    description: "Atuação na equipe de suporte ao usuário e redes da empresa.",
-    tags: ["Suporte", "Estágio"],
+    overallPeriod: "2020 — 2022",
+    roles: [
+      {
+        role: "Estágio em TI",
+        period: "2020 — 2021",
+        description: "Atuação na equipe de suporte ao usuário e redes da empresa.",
+        tags: ["Suporte", "Estágio"],
+      },
+      {
+        role: "Auxiliar de TI",
+        period: "2021 — 2022",
+        description:
+          "Suporte ao usuário, manutenção de microcomputadores e impressoras e gerenciamento da rede interna e conexão com a filial de Brasília.",
+        tags: ["Suporte", "Manutenção"],
+      },
+      {
+        role: "Assistente de TI",
+        period: "2021 — 2022",
+        description:
+          "Suporte a auxiliares, manutenção de microcomputadores e impressoras e gerenciamento da rede interna, incluindo a conexão com a filial de Brasília.",
+        tags: ["Suporte", "Redes"],
+      },
+    ],
   },
 ];
 
