@@ -71,6 +71,7 @@ export type CompanyTimeline = {
   companyBadge: string;
   companyColor: string;
   overallPeriod: string;
+  align: "center" | "left" | "right";
   roles: RoleStep[];
 };
 
@@ -80,6 +81,7 @@ export const experience: CompanyTimeline[] = [
     companyBadge: "CG",
     companyColor: "#3fd0ff",
     overallPeriod: "2024 — Presente",
+    align: "center",
     roles: [
       {
         role: "Analista Desenvolvedor Pleno · SEFAZ",
@@ -109,6 +111,7 @@ export const experience: CompanyTimeline[] = [
     companyBadge: "IN",
     companyColor: "#8b7bf7",
     overallPeriod: "2021 — 2024",
+    align: "left",
     roles: [
       {
         role: "Analista / Desenvolvedor Jr · Automação",
@@ -127,25 +130,11 @@ export const experience: CompanyTimeline[] = [
     ],
   },
   {
-    company: "C6 Bank",
-    companyBadge: "C6",
-    companyColor: "#2dd4bf",
-    overallPeriod: "2018",
-    roles: [
-      {
-        role: "Auxiliar de Desenvolvimento",
-        period: "2018",
-        description:
-          "Atuação na equipe de front-end do banco: colaboração no desenvolvimento da landing page, criação do código dos primeiros e-mails marketing e colaboração na biblioteca de componentes geral do banco.",
-        tags: ["Front-end", "Email Marketing", "Componentes"],
-      },
-    ],
-  },
-  {
     company: "CALIA Y2 Propaganda & Marketing",
     companyBadge: "CY",
     companyColor: "#fbbf24",
     overallPeriod: "2020 — 2022",
+    align: "right",
     roles: [
       {
         role: "Estágio em TI",
@@ -166,6 +155,22 @@ export const experience: CompanyTimeline[] = [
         description:
           "Suporte a auxiliares, manutenção de microcomputadores e impressoras e gerenciamento da rede interna, incluindo a conexão com a filial de Brasília.",
         tags: ["Suporte", "Redes"],
+      },
+    ],
+  },
+  {
+    company: "C6 Bank",
+    companyBadge: "C6",
+    companyColor: "#2dd4bf",
+    overallPeriod: "2018",
+    align: "left",
+    roles: [
+      {
+        role: "Auxiliar de Desenvolvimento",
+        period: "2018",
+        description:
+          "Atuação na equipe de front-end do banco: colaboração no desenvolvimento da landing page, criação do código dos primeiros e-mails marketing e colaboração na biblioteca de componentes geral do banco.",
+        tags: ["Front-end", "Email Marketing", "Componentes"],
       },
     ],
   },
