@@ -94,13 +94,19 @@ export const experience: ExperienceEntry[] = [
   },
 ];
 
+export type ProjectTile =
+  | { kind: "gradient"; from: string; to: string }
+  | { kind: "locked" };
+
 export type Project = {
   title: string;
   context: string;
   description: string;
   tags: string[];
   confidential: boolean;
-  link?: string;
+  tile: ProjectTile;
+  demoUrl?: string;
+  repoUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -111,6 +117,7 @@ export const projects: Project[] = [
       "Substituição da solução legada do Plano Plurianual: arquitetura, modelagem de banco e conformidade de auditoria desde o zero.",
     tags: [".NET Core", "Clean Architecture"],
     confidential: true,
+    tile: { kind: "locked" },
   },
   {
     title: "Automação Financeira",
@@ -119,6 +126,7 @@ export const projects: Project[] = [
       "Integrações com crawlers financeiros e criação de aplicações internas (Ajuizamento, Watch List, ROC) para reduzir trabalho manual.",
     tags: ["Integrações", "Legado"],
     confidential: true,
+    tile: { kind: "locked" },
   },
   {
     title: "Front-end C6 Bank",
@@ -127,14 +135,48 @@ export const projects: Project[] = [
       "Landing page, primeiros e-mails marketing e biblioteca de componentes reutilizáveis do banco.",
     tags: ["Front-end", "Componentes"],
     confidential: true,
+    tile: { kind: "locked" },
   },
   {
     title: "Portfólio Pessoal",
-    context: "Este site",
+    context: "Projeto próprio",
     description: "Este portfólio, projetado e construído para apresentar minha trajetória e minhas habilidades.",
     tags: ["Next.js", "Tailwind", "TypeScript"],
     confidential: false,
-    link: "https://github.com/felipe-Santana1/Portifolio_Web_Atualizado_2026",
+    tile: { kind: "gradient", from: "#3fd0ff", to: "#6366f1" },
+    repoUrl: "https://github.com/felipe-Santana1/Portifolio_Web_Atualizado_2026",
+  },
+  {
+    title: "Oficina na Nuvem",
+    context: "Projeto próprio",
+    description: "[DESCRIÇÃO DO PROJETO]",
+    tags: ["[STACK]"],
+    confidential: false,
+    tile: { kind: "gradient", from: "#2dd4bf", to: "#0ea5e9" },
+  },
+  {
+    title: "Prestação na Nuvem",
+    context: "Projeto próprio",
+    description: "[DESCRIÇÃO DO PROJETO]",
+    tags: ["[STACK]"],
+    confidential: false,
+    tile: { kind: "gradient", from: "#a78bfa", to: "#6366f1" },
+  },
+  {
+    title: "Hortifruti Cloud",
+    context: "Projeto próprio",
+    description: "[DESCRIÇÃO DO PROJETO]",
+    tags: ["[STACK]"],
+    confidential: false,
+    tile: { kind: "gradient", from: "#4ade80", to: "#16a34a" },
+  },
+  {
+    title: "BlessedStore",
+    context: "Projeto próprio",
+    description: "[DESCRIÇÃO DO PROJETO]",
+    tags: ["[STACK]"],
+    confidential: false,
+    tile: { kind: "gradient", from: "#fbbf24", to: "#f97316" },
   },
 ];
 
