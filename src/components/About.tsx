@@ -31,7 +31,7 @@ export default function About() {
 
         <Reveal delay={150} className="relative hidden h-[420px] w-[300px] flex-shrink-0 lg:block">
           <div className="absolute right-0 top-0 h-72 w-60 -rotate-3 overflow-hidden rounded-[22px] border border-border-subtle bg-surface shadow-[0_25px_60px_rgba(0,0,0,0.55)]">
-            <img src="/fotoEvento.png" alt="Felipe Santana em evento de tecnologia" className="h-full w-full object-cover" />
+            <img src="/Eu.jpeg" alt="Felipe Santana em evento de tecnologia" className="h-full w-full object-cover" />
           </div>
           <div className="absolute bottom-0 left-0 h-72 w-60 rotate-3 overflow-hidden rounded-[22px] border-2 border-accent/50 bg-surface shadow-[0_25px_60px_rgba(0,0,0,0.55)]">
             <img src="/fotoPerfil.png" alt="Felipe Santana, foto profissional" className="h-full w-full object-cover" />
