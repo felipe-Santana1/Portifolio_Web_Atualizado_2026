@@ -3,11 +3,12 @@ import { profile } from "@/lib/data";
 import { ArrowRightIcon } from "./icons";
 
 const nodes = [
-  { x: 200, y: 60, label: ".NET", tone: "accent" as const },
-  { x: 333, y: 132, label: "React", tone: "accent-2" as const },
-  { x: 278, y: 288, label: "Node.js", tone: "accent" as const },
-  { x: 122, y: 288, label: "Angular", tone: "accent-2" as const },
-  { x: 67, y: 132, label: "AWS", tone: "accent" as const },
+  { x: 200, y: 60, label: "Java", color: "#ff3b30" },
+  { x: 303.9, y: 120, label: "Azure", color: "#00b4ff" },
+  { x: 303.9, y: 240, label: "React", color: "#8b7bf7" },
+  { x: 200, y: 300, label: "Node.js", color: "#39ff88" },
+  { x: 96.1, y: 240, label: "Angular", color: "#ff2e88" },
+  { x: 96.1, y: 120, label: "AWS", color: "#ffd60a" },
 ];
 
 export default function Hero() {
@@ -65,22 +66,25 @@ export default function Hero() {
                   y1={180}
                   x2={node.x}
                   y2={node.y}
-                  stroke="rgba(255,255,255,0.18)"
+                  stroke="rgba(139,123,247,0.28)"
                   strokeWidth={1.5}
                 />
               ))}
-              <circle cx={200} cy={180} r={34} fill="var(--background)" stroke="var(--accent)" strokeWidth={2} />
+              <circle
+                cx={200}
+                cy={180}
+                r={34}
+                fill="var(--background)"
+                stroke="var(--accent)"
+                strokeWidth={2}
+                className="stack-core"
+              />
               <text x={200} y={185} textAnchor="middle" className="font-display" fontSize={15} fontWeight={700} fill="var(--accent)">
                 F/S
               </text>
               {nodes.map((node) => (
-                <g key={node.label}>
-                  <circle
-                    cx={node.x}
-                    cy={node.y}
-                    r={9}
-                    fill={node.tone === "accent" ? "var(--accent)" : "var(--accent-2)"}
-                  />
+                <g key={node.label} className="stack-node" style={{ color: node.color }}>
+                  <circle cx={node.x} cy={node.y} r={9} fill="currentColor" />
                   <text
                     x={node.x}
                     y={node.y < 180 ? node.y - 18 : node.y + 24}
@@ -93,9 +97,6 @@ export default function Hero() {
                 </g>
               ))}
             </svg>
-            <span className="mt-auto text-center text-[13px] text-muted">
-              5 tecnologias, 1 objetivo: sistemas que escalam
-            </span>
           </div>
         </Reveal>
       </div>

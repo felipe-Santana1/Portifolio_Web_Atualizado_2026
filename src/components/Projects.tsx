@@ -1,16 +1,39 @@
+"use client";
+
+import { useState } from "react";
 import Reveal from "./Reveal";
-import { projects, type Project } from "@/lib/data";
+import { projects, projectFilters, type Project, type ProjectCategory } from "@/lib/data";
 import { ArrowRightIcon, GithubIcon, LockIcon } from "./icons";
 
 export default function Projects() {
+  const [filter, setFilter] = useState<ProjectCategory | "todos">("todos");
+  const filtered = filter === "todos" ? projects : projects.filter((project) => project.category === filter);
+
   return (
     <section id="projetos" className="py-24">
       <div className="mx-auto max-w-6xl px-6 text-center lg:px-10">
         <h2 className="font-display text-[34px] font-bold">Projetos & Cases</h2>
         <p className="mt-3.5 text-[16px] text-muted">Sistemas que ajudei a construir, modernizar e escalar</p>
 
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
+          {projectFilters.map((option) => (
+            <button
+              key={option.value}
+              type="button"
+              onClick={() => setFilter(option.value)}
+              className={`rounded-full border px-4 py-2 text-[13px] font-semibold transition-colors ${
+                filter === option.value
+                  ? "border-accent bg-accent/15 text-accent"
+                  : "border-border-subtle bg-white/5 text-[#dbe4f5] hover:border-white/25"
+              }`}
+            >
+              {option.label}
+            </button>
+          ))}
+        </div>
+
         <div className="mt-12 grid grid-cols-1 gap-7 text-left sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
+          {filtered.map((project, index) => (
             <Reveal key={project.title} delay={(index % 3) * 90}>
               <ProjectCard project={project} />
             </Reveal>
@@ -32,6 +55,12 @@ function ProjectCard({ project }: { project: Project }) {
           >
             <span className="font-display text-xl font-bold text-white/95 drop-shadow-sm">{project.title}</span>
           </div>
+        ) : project.tile.kind === "image" ? (
+          <img
+            src={project.tile.src}
+            alt={project.title}
+            className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.06]"
+          />
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-[#0f1626] transition-transform duration-500 ease-out group-hover:scale-[1.04]">
             <LockIcon className="h-7 w-7 text-muted" />

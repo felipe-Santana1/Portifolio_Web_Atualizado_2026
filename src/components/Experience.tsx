@@ -32,8 +32,10 @@ function CompanyBranch({ company, delay }: { company: CompanyTimeline; delay: nu
     <div className="flex flex-col items-center">
       <div className="z-10 flex items-center gap-3">
         <span
-          className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-[12px] font-bold text-[#06121c] ring-4 ring-background-alt"
-          style={{ backgroundColor: company.companyColor }}
+          className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-[12px] font-bold ring-4 ring-background-alt ${
+            company.company === "C6 Bank" ? "text-white" : "text-[#06121c]"
+          }`}
+          style={{ backgroundColor: company.company === "C6 Bank" ? "#000000" : company.companyColor }}
         >
           {company.companyBadge}
         </span>
